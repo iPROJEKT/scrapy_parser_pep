@@ -2,6 +2,7 @@ import scrapy
 
 from pep_parse.settings import ALLOWED_DOMAINS, START_URLS
 
+
 class PepSpider(scrapy.Spider):
     name = 'pep'
     allowed_domains = [ALLOWED_DOMAINS]
