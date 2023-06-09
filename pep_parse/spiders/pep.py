@@ -16,7 +16,9 @@ class PepSpider(scrapy.Spider):
             yield response.follow(pep_link, callback=self.parse_pep)
 
     def parse_pep(self, response):
-        full_pep_name = response.css('.page-title:nth-child(2n+1)::text').get().split()
+        full_pep_name = response.css(
+            '.page-title:nth-child(2n+1)::text'
+        ).get().split()
         number = full_pep_name[1]
         name_pep = ' '.join(full_pep_name[3:])
         yield {
